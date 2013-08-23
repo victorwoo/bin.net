@@ -57,13 +57,13 @@
     <Compile Include="SignedByteConverterTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BinNetOld\BinNetOld.csproj">
+      <Project>{CA3411AA-4F82-46B0-8F5C-057F800CFD9C}</Project>
+      <Name>BinNetOld</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HashLib\HashLib.csproj">
       <Project>{31880FB6-5B86-42B8-AB92-864045B5D7A2}</Project>
       <Name>HashLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BinNet\BinNet.csproj">
-      <Project>{CA3411AA-4F82-46B0-8F5C-057F800CFD9C}</Project>
-      <Name>BinNet</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
