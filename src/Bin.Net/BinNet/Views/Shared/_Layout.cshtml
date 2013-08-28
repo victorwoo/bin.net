@@ -7,26 +7,22 @@
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/My/Less")
     @Styles.Render("~/Content/themes/base/css")
 </head>
 <body>
-    <div id="userSettings">
-        @Html.Partial("_UserSettings")
-    </div>
+    <header>
+        <h1>@ViewBag.Title</h1>
+    </header>
 
     <div id="body">
         @RenderBody()
     </div>
 
     <footer>
-        <nav>
-            <ul id="menu">
-                <li>@Html.ActionLink("Todo List", "Index", "Home", new { area = "" }, null)</li>
-                <li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
-            </ul>
-        </nav> 
-        <p>Learn more about <a href="http://go.microsoft.com/fwlink/?LinkId=273732">Single Page Applications</a></p>
-        <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+        <div>
+            <p>&copy; @DateTime.Now.Year - <a href="http://www.vichamp.com">www.vichamp.com</a></p>
+        </div>
     </footer>
 
     @Scripts.Render("~/bundles/jquery")

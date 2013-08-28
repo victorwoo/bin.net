@@ -1,0 +1,26 @@
+﻿body {
+  /*color: red;*/
+
+}
+#body #main-content {
+  /*text-align: center;*/
+
+}
+#body label.title {
+  text-align: right;
+  float: left;
+  width: 160px;
+  font-weight: bold;
+}
+#body input {
+  margin-left: 10px;
+  padding: 2px;
+  border: #999 1px solid;
+  width: 600px;
+  font: 1.0em Courier, monospace;
+  color: white;
+  background-color: darkblue;
+}
+footer {
+  text-align: center;
+}

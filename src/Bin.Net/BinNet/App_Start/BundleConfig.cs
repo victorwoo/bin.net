@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Optimization;
+using BinNet.App_Start;
 
 namespace BinNet
 {
@@ -30,13 +31,19 @@ namespace BinNet
                 "~/Scripts/app/todo.model.js",
                 "~/Scripts/app/todo.viewmodel.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/binnet").Include(
+                "~/Scripts/app/binnet.viewmodel.js",
+                "~/Scripts/app/binnet.bindings.js",
+                //"~/Scripts/app/binnet.datacontext.js",
+                "~/Scripts/app/binnet.model.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/Site.css",
+                "~/Content/main.css",
                 "~/Content/TodoList.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
@@ -52,6 +59,12 @@ namespace BinNet
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+
+            var lessBundle = new Bundle("~/My/Less").IncludeDirectory("~/Content/Less", "*.less");
+            lessBundle.Transforms.Add(new LessTransform());
+            lessBundle.Transforms.Add(new CssMinify());
+            bundles.Add(lessBundle);
         }
     }
 }
